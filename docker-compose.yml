@@ -1,0 +1,12 @@
+services:
+  tesseract-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tesseract-api
+    ports:
+      - "4561:4560"
+    environment:
+      - CONFIG_PATH=/app/config/local.yaml
+    mem_limit: 1g
+    restart: unless-stopped
